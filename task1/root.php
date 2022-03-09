@@ -36,7 +36,7 @@
    if(isset($_POST["btn"])){
     $num1=$_POST["num1"];
     $num2=$_POST["num2"];
-    // $root=$_POST["pow($num1 ,1/$num2)"];
+    
 
     echo pow($num1 ,1/$num2 );
 }
