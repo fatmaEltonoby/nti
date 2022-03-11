@@ -55,7 +55,7 @@
 
 <?php
 
-// if( isset($_GET['operation']))
+
 if(isset($_POST['add'])){
     $number1 = $_POST['number1'];
     $number2 = $_POST['number2'];

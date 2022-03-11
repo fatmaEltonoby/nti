@@ -40,7 +40,7 @@
 // $average = $total / 5.0;
 // $percentage = ($total / 250.0) * 100;
 // $grade = '';
-
+if($_POST){
   if(isset($_POST['btn'])){
       $sub1 = $_POST['sub1'];
       $sub2 = $_POST['sub2'];
@@ -48,31 +48,54 @@
       $sub4 = $_POST['sub4'];
       $sub5 = $_POST['sub5'];
 
-    $total = $sub1 + $sub2 + $sub3 + $sub4 + $sub5;
-    $average = $total / 5.0;
-    $percentage = ($total / 250.0) * 100;
-    $grade = '';
+      $total = $sub1 + $sub2 + $sub3 + $sub4 + $sub5;
+      $average = $total / 5.0;
+      $percentage = ($total / 250.0) * 100;
+      $grade = '';
+      define('maxgrade',50);
 
+      if($sub1 > maxgrade || $sub1 < 0){
+        $message = 'please enter a valid degree';
+      }elseif($sub2 > maxgrade || $sub2 < 0){
+        $message = 'please enter a valid degree';
+      }
+      elseif($sub3 > maxgrade || $sub3 < 0){
+        $message = 'please enter a valid degree';
+      }
+      elseif($sub4 > maxgrade || $sub4 < 0){
+        $message = 'please enter a valid degree';
+      }
+      elseif($sub5 > maxgrade || $sub5< 0){
+        $message = 'please enter a valid degree';
+      }
 
-    if ($average >= 90)
+   
+        
+      
+
+    if ($average >= 40)
     $grade = "A";
-    else if ($average >= 80 && $average < 90)
+    else if ($average >= 35 && $average < 40)
         $grade = "B";
-    else if ($average >= 70 && $average < 80)
+    else if ($average >= 25 && $average < 35)
         $grade = "C";
-    else if ($average >= 60 && $average < 70)
+    else if ($average >= 20 && $average < 25)
         $grade = "D";
-    else if($average >= 40 && $average < 60)
+    else if($average >= 15 && $average < 20)
         $grade = "E";
         else{
             $grade = "F";
         }
-  }
+      }
+  
   echo "The Total marks   = " . $total . "/250\n" . "<br>";
   echo "The Average marks = " . $average . "\n" . "<br>";
   echo "The Percentage    = " . $percentage . "%\n" . "<br>";
   echo "The Grade         = '" . $grade . "'\n" . "<br>";
 
+ 
+  
 
-
+    }
+ 
 ?>
